@@ -1,0 +1,197 @@
+:root {
+    --cor-primaria: #004599;
+    --cor-secundaria: #6c757d;
+    --cor-texto: #555;
+    --cor-fundo-destaque: #d4f3d8;
+    --cor-fundo-cabecalho-rodape: #1a202c;
+    --cor-accent: #FFC107;
+    --cor-top-tex:#d0c7ed;
+    --cor-bg: #fff;
+    --cor-fundo-corpo: #f0f2f5;
+    --success-color: #00D1A0;
+    /* Fundo levemente cinza */
+
+    /* Tipografia */
+    --fonte-titulo: 'Poppins', sans-serif;
+    --fonte-corpo: 'Inter', sans-serif;
+
+    /* Espaçamento e Bordas */
+    --border-color: #dee2e6;
+    --espacamento-padrao: 1.0rem;
+    /* 24px */
+    --borda-arredondada-padrao: 12px;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo-corpo);
+}
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+.container-gerente{
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+.section-card-gerente {
+    background-color: var(--cor-bg);
+    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+}
+.section-card-gerente h2{
+    color: var(--cor-texto);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    padding-bottom: 10px;
+}
+.header-empresa {
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    padding: 120px 0 80px 0;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+}
+.header-empresa h1 {
+    font-size: 2.3em;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: var(--cor-top-tex);
+}
+
+.header-empresa p {
+    font-size: 1.0em;
+    margin-bottom: 40px;
+    font-weight: 300;
+    color: var(--cor-bg);
+}
+.divisor{
+    border: 0;
+    height: 3px;
+    background: linear-gradient(to right, #007bff, #28a745);
+    margin: 25px 40px;
+    border-radius: 1px;
+}
+.section-card-gerente i {
+    margin-right: 10px;
+    font-weight: 800;
+}
+
+.section-card-gerente ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.section-card-gerente ul li {
+    background-color: #e9f5ff;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--cor-primaria);
+}
+.section-card-gerente p{
+    background-color: #e9f5ff;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    font-weight: 700;
+}
+.metricas-input{
+    box-shadow: var(--shadow-light);
+    border-radius: var(--borda-arredondada-padrao);
+    padding: 10px;
+    display: flex;
+    align-items:center;
+    align-content: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.metricas-input label, 
+.metricas-input input {
+    display: flexbox;
+    
+    margin-bottom: 10px;
+}
+.metricas-input input {
+    width: auto;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color:var(--cor-primaria);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #00387a;
+    transform: translateY(-3px);
+}
+.resultado {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px dashed #007bff ;
+    border-radius: 5px;
+}
+
+#pontuacaoFinal {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.status-verde { color: #28a745; }
+.status-amarelo { color: #ffc107; }
+.status-vermelho { color: #dc3545; }
+
+.button-action {
+    display: block;
+    width: 80%;
+    /* Ajuste a largura conforme o desejo */
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 15px 30px;
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    /* Cor de sucesso/verde */
+    color: var(--cor-bg);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-action:hover {
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    transform: translateY(-2px);
+}
+/*footer*/
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    color: #adb5bd;
+    font-size: 0.85em;
+}

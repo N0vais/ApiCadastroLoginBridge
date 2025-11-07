@@ -1,0 +1,315 @@
+:root {
+    --cor-primaria: #004599; /* Azul Vibrante */
+    --cor-secundaria: #333; /* Roxo Escuro */
+    --cor-accent: #FFC107;
+    
+    /*textos*/
+    --text-light: #f0f0f0;
+    --text-dark: #2c3e50;
+    --bg-dark: #1f253d;
+    
+
+    --cor-fundo-cabecalho-rodape: #1a202c;
+    --cor-fundo-corpo: #f0f2f5; 
+
+    /*tipografia*/
+    --fonte-corpo: 'Inter', sans-serif;
+
+    /* Espaçamento e Bordas */
+    --espacamento-padrao: 1.0rem; /* 24px */
+    --borda-arredondada-padrao: 12px;
+    
+
+}
+
+.container-modal {
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: var(--text-light);
+    backdrop-filter: blur(10px); /* Backdrop-filter aplica um fundo borrado */
+    padding: 40px var(--espacamento-padrao);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.18); 
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Para garantir que as transições sejam contidas */
+}
+
+.login-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Garante que fique acima de TUDO */
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0.5s;
+    font-family: var(--fonte-corpo);
+    visibility: hidden;
+}
+.login-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+h1 {
+    font-weight: 600;
+    margin-bottom: var(--espacamento-padrao);
+}
+
+p {
+    opacity: 0.8;
+    margin-bottom: var(--espacamento-padrao);
+}
+
+/* FASE 1: Seleção de Perfil */
+.card-area {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.5s, transform 0.5s;
+    position: absolute;
+}
+
+.card-area.active {
+    opacity: 1;
+    transform: translateX(0);
+    position: relative;
+}
+
+.profile-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.profile-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px var(--espacamento-padrao);
+    border-radius: var(--borda-arredondada-padrao);
+    cursor: pointer;
+    transition: transform 0.3s ease, 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: transparent;
+    box-shadow: 0 8px 15px var(--cor-accent); /* Efeito neon sutil */
+}
+
+.profile-card i {
+    font-size: 40px;
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+/* FASE 2: Formulário de Login */
+.login-form {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s, transform 0.5s;
+    position: absolute;
+    width: calc(100% - 80px); /* Ajuste de padding */
+    display: flex
+;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    
+}
+
+.login-form.active {
+    opacity: 1;
+    transform: translateX(0);
+    position: relative;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    font-weight: 300;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-light);
+    font-size: 1em;
+    outline: none;
+    transition: border 0.3s;
+    /*essa linha de codigo faz com que o background do 
+    input não mude quando o autocomplite for acionado*/
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+}
+
+.input-group input:focus {
+    border: 1px solid var(--cor-accent);
+}
+
+.forgot-password {
+    display: inline-block;
+    text-align: right;
+    position: relative;
+    color: var(--text-light);
+    font-size: 0.9em;
+    text-decoration: none;
+    margin-bottom: 25px;
+    background-color: #1a202c;
+    padding: 5px 20px;
+    border-radius: 8px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.forgot-password::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Começa com largura zero */
+    height: 1px; /* Espessura da linha */
+    bottom: -5px; /* Posição abaixo do texto */
+    right: 0; /* Define o ponto de partida do sublinhado (direita) */
+    background-color: #FFC107; /* Cor da linha */
+    transition: width 0.3s ease-out; /* Transição para a largura */
+}
+
+.forgot-password:hover{
+    background: transparent;
+}
+
+.forgot-password:hover::after {
+    width: 100%;
+    left: 0; /* Garante que a linha cresça da esquerda para a direita (ou centralizada) */
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: var(--cor-fundo-cabecalho-rodape);
+    color: var(--text-light);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+    border: 1px solid var(--cor-accent);
+    background:transparent; 
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+.back-link {
+    margin-top: 30px;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: opacity 0.3s;
+}
+
+.back-link:hover {
+    color: #FFC107;
+    opacity: 0.7;
+}
+
+/* Responsividade Básica */
+@media (max-width: 480px) {
+    .profile-cards {
+        flex-direction: column;
+    }
+    .container {
+        padding: 20px;
+    }
+    /* Estilo Básico do Menu (Opcional) */
+.main-nav {
+    /* Define a posição inicial do menu, por exemplo, fora da tela */
+    position: fixed;
+    top: 0;
+    right: -100%; /* Começa escondido à direita */
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    transition: right 0.3s ease-out; /* Adiciona uma transição suave */
+    z-index: 10; /* Garante que fique acima de outros elementos */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+}
+
+/* O Estilo do Botão (Opcional, mas comum) */
+.hamburger-btn {
+    display: block; /* Garante que o botão apareça apenas onde o menu sanduíche é necessário */
+    font-size: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 11; /* Acima do menu */
+    position: fixed; /* Opcional: para mantê-lo na tela enquanto rola */
+}
+
+/* CLASSE CHAVE: O que acontece quando o menu está ATIVO */
+.main-nav.ativo {
+    right: 0; /* Move o menu para a posição visível (aparecendo) */
+}
+}
+
+/*estilo do visualizador de senha toglle*/
+/* Adicione este CSS */
+.password-container {
+    position: relative; /* Necessário para posicionar o ícone de forma absoluta */
+    display: flex; /* Para garantir que o input preencha o espaço, se necessário */
+    /* Você pode ajustar ou remover o 'display: flex' dependendo do seu CSS existente para input-group */
+}
+
+#password {
+    width: 100%; /* Garante que o input ocupe todo o espaço */
+    padding-right: 40px; /* Cria espaço para o ícone */
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Posição do ícone à direita */
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none; /* Impede a seleção do texto/ícone */
+    font-style: normal; /* Para o ícone (olho) não ficar itálico */
+    font-size: 1.2em; /* Tamanho do ícone */
+}
+
+
+/* Estilos do Botão Fechar */
+.close-button { 
+    margin-top: 30px;
+    width: 50px;
+    color: red;
+ }
+
+
+ /*indicado para retirar */
+ /* Para Microsoft Edge */
+::-ms-reveal {
+    display: none !important;
+}
+

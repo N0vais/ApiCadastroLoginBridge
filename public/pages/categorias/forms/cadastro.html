@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Inteligente de Empresa</title>
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="container-form-cadastro">
+
+        <div class="card-area active" id="profile-selection">
+            <h1>Crie sua conta e viva essa experiência!</h1>
+            <h2>Escolha seu perfil </h2>
+            <p>Para prosseguir, nos diga quem é você.</p>
+
+            <div class="profile-cards">
+                <div class="profile-card" data-profile="aluno">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>Sou Aluno</h2>
+                </div>
+
+                <div class="profile-card" data-profile="gerente">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h2>Sou Gerente</h2>
+                </div>
+
+                <div class="profile-card" data-profile="empresa">
+                    <i class="fas fa-building"></i>
+                    <h2>Sou Empresa</h2>
+                </div>
+            </div>
+            <button class="close-button" id="closeLoginButton">&times;</button>
+        </div>
+
+        <form class="container" id="registration-form">
+            
+            <div id="cnpj-screen" class="form-section hidden">
+                <h2 class="title" id="cnpj-title">Para começarmos, qual o CNPJ da sua empresa?</h2>
+                <div class="input-group">
+                    <input type="text" id="cnpj-input" maxlength="18" placeholder="00.000.000/0000-00">
+                    <button id="validate-btn" class="button">Continuar</button>
+                </div>
+                <div id="error-message-cnpj" class="error-message"></div>
+                <button type="button" class="back-btn" data-prev="profile-selection">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </button>
+                
+            </div>
+
+            <div id="details-screen" class="form-section hidden">
+                <h2 class="title">Confirme as informações encontradas:</h2>
+                <div class="form-fields">
+                    <div class="input-group">
+                        <label for="company-name">Nome da Empresa</label>
+                        <input type="text" id="company-name" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label for="activities">Atividades Principais</label>
+                        <textarea id="activities" rows="3" readonly></textarea>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="button2" id="confirm-btn">Sim, estão corretas</button>
+                        <button type="button" class="button2" id="edit-btn">Preciso corrigir</button>
+                    </div>
+                </div>
+                <button type="button" class="back-btn" data-prev="cnpj-screen">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </button>
+            </div>
+
+            <div id="personal-data-screen" class="form-section hidden">
+                <h2 class="title" id="personal-data-title">Complete seus dados:</h2>
+                <div class="input-group">
+                    <label for="full-name">Nome Completo</label>
+                    <input type="text" id="full-name" placeholder="Seu nome">
+                </div>
+                <div class="input-group">
+                    <label for="job-title">Sua Função</label>
+                    <input type="text" id="job-title" placeholder="Ex: Gerente de RH, Coordenador de Projetos">
+                </div>
+                <button type="button" id="next-personal-data-btn" class="button">Próximo</button>
+                <div id="error-message-personal" class="error-message"></div>
+                <button type="button" class="back-btn" data-prev="dynamic">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </button>
+            </div>
+
+
+            <div id="email-screen" class="form-section hidden">
+                <h2 class="title">Informe seu e-mail</h2>
+                <input type="email" id="email-input" placeholder="email@empresa.com" autocomplete="email">
+                <button type="button" id="next-email-btn" class="button">Próximo</button>
+                <div id="error-message-email" class="error-message"></div>
+                <button type="button" class="back-btn" data-prev="personal-data-screen">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </button>
+            </div>
+
+            <div id="password-screen" class="form-section hidden">
+                <h2 class="title">Crie e confirme sua senha</h2>
+
+                <div class="input-group password-toggle-group">
+                    <label for="password-input">Nova Senha</label>
+                    <input type="password" name="password" id="password-input" placeholder="Crie uma senha forte" required autocomplete="new-password">
+                    <i class="toggle-password" id="togglePassword" onclick="togglePasswordVisibility('password-input', 'togglePassword')">🙈</i>
+                
+                </div>
+
+                <div class="input-group password-toggle-group">
+                    <label for="confirm-password-input">Confirme a Senha</label>
+                    <input type="password" name="confirm-password" id="confirm-password-input" placeholder="Repita a senha" required autocomplete="new-password">
+                    <i class="toggle-password" id="togglePassword-confirm" onclick="togglePasswordVisibility('confirm-password-input', 'togglePassword-confirm')">🙈</i>
+                    
+                </div>
+
+                <ul id="password-checklist">
+                    <li id="length-check">✔ Mínimo de 8 caracteres</li>
+                    <li id="uppercase-check">✔ Pelo menos uma letra maiúscula</li>
+                    <li id="lowercase-check">✔ Pelo menos uma letra minúscula</li>
+                    <li id="number-check">✔ Pelo menos um número</li>
+                    <li id="symbol-check">✔ Pelo menos um símbolo (@$!%*?&)</li>
+                </ul>
+
+                <div id="password-match-error" class="error-message"></div>
+
+                <button type="submit" id="submit-btn" class="button" disabled>Finalizar Cadastro</button>
+                <button type="button" class="back-btn" data-prev="email-screen">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </button>
+            </div>
+            
+        </form>
+
+        <div id="confirmation-screen" class="card-area hidden">
+            <i class="fas fa-check-circle" style="font-size: 60px; color: var(--success-color); margin-bottom: 20px;"></i>
+            <h1>Cadastro Finalizado!</h1>
+            <p>Seu perfil foi criado com sucesso. Você será redirecionado em breve.</p>
+            <p>Obrigado por se juntar a nós!</p>
+            <button type="button" class="button" >Ir para o Login</button>
+        </div>
+
+    </div>
+    <script src="/pages/categorias/js/cadastro.js"></script>
+</body>
+</html>

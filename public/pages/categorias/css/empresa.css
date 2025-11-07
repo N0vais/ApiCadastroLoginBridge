@@ -1,0 +1,451 @@
+:root {
+    --cor-primaria: #004599;
+    --cor-secundaria: #6c757d;
+    --cor-texto: #555;
+    --cor-fundo-destaque: #d4f3d8;
+    --cor-fundo-cabecalho-rodape: #1a202c;
+    --cor-accent: #FFC107;
+    --cor-top-tex:#d0c7ed;
+    --cor-bg: #fff;
+    --cor-fundo-corpo: #f0f2f5;
+    --success-color: #00D1A0;
+    /* Fundo levemente cinza */
+
+    /* Tipografia */
+    --fonte-titulo: 'Poppins', sans-serif;
+    --fonte-corpo: 'Inter', sans-serif;
+
+    /* Espaçamento e Bordas */
+    --border-color: #dee2e6;
+    --espacamento-padrao: 1.0rem;
+    /* 24px */
+    --borda-arredondada-padrao: 12px;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo-corpo);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+.container-table {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+}
+
+/* --- Header/Hero Section (Foco em clareza) --- */
+.header-empresa {
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    padding: 120px 0 80px 0;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+}
+
+.header-empresa h1 {
+    font-size: 2.3em;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: var(--cor-top-tex);
+}
+
+.header-empresa p {
+    font-size: 1.0em;
+    margin-bottom: 40px;
+    font-weight: 300;
+    color: var(--cor-bg);
+}
+
+.btn-accent {
+    display: inline-block;
+    background:  var(--cor-primaria);
+    color: var(--cor-bg);
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: var(--borda-arredondada-padrao);
+    font-weight: 500;
+    border: 2px solid var(--cor-primaria);
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.btn-accent:hover {
+    background: transparent;
+    border-color: #FFC107;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* --- Seções Gerais --- */
+section {
+    padding: 80px 0;
+}
+
+/* Seção alternada para melhor visualização */
+#pilares {
+    background-color: var(--cor-fundo-corpo);
+}
+
+#ganhos {
+    background-color: var(--cor-bg);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 50px;
+    font-weight: 700;
+    color: var(--cor-texto);
+}
+
+/* --- Pilares (Feature Boxes) - Layout Grid --- */
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pillar-card {
+    background: var(--cor-bg);
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: var( --shadow-light);
+    border-top: 4px solid var(--cor-primaria);
+    transition: box-shadow 0.3s ease;
+}
+
+.pillar-card:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.pillar-card i {
+    font-size: 2.5em;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.pillar-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--cor-texto);
+}
+.pillar-card p{
+    color: var(--cor-secundaria);
+}
+.divisor{
+    border: 0;
+    height: 3px;
+    background: linear-gradient(to right, #007bff, #28a745);
+    margin: 25px 40px;
+    border-radius: 1px;
+}
+/* --- Win-Win-Win Table --- */
+.win-win-table {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var( --shadow-light);
+}
+
+.win-win-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.win-win-table th,
+.win-win-table td {
+    padding: 18px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.win-win-table th {
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    color: var(--cor-bg);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.win-win-table tr:last-child td {
+    border-bottom: none;
+}
+
+.win-win-table tr:nth-child(even) {
+    background-color: #fcfcff;
+}
+
+.win-win-table td:nth-child(3) {
+    font-weight: 500;
+    color: var(--success-color);
+}
+
+/* --- Chamada para Ação (CTA) --- */
+.cta {
+    background: var(--cor-fundo-cabecalho-rodape);
+    color: var(--cor-bg);
+    text-align: center;
+    margin: 50px;
+    padding: 100px 0;
+    border-radius: var(--borda-arredondada-padrao);
+    box-shadow: 0 8px 15px black; 
+}
+
+.cta h2 {
+    font-size: 2.4em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.cta p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+/* CTA button in footer section */
+.btn-cta {
+    background: var(--cor-fundo-cabecalho-rodape);
+    color: var(--success-color);
+    padding: 15px 40px;
+    margin-top: 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-cta:hover {
+    background: #f0f0f0;
+    color: var(--cor-primaria);
+}
+/*inicio da sessaõ como funciona*/
+.section-card {
+    background-color: var(--cor-bg);
+    padding: 30px;
+    margin: 50px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+}
+
+
+/*------------fim da sessao------------*/
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    color: #adb5bd;
+    font-size: 0.85em;
+}
+/*---------------fim do footer--------------*/
+.section-card h2 {
+    color: var(--cor-texto);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    padding-bottom: 10px;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-bg);
+    border-radius: 50%;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.step-item {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+}
+.button-action {
+    display: block;
+    width: 80%;
+    /* Ajuste a largura conforme o desejo */
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 15px 30px;
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    color: var(--cor-bg);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.button-action:hover {
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    transform: translateY(-2px);
+}
+.note {
+    text-align: center;
+    color: var(--cor-secundaria);
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+
+/* --- Responsividade (Aprimorada) --- */
+@media (max-width: 768px) {
+    .header-empresa h1 {
+        font-size: 2.5em;
+    }
+
+    .header-empresa p {
+        font-size: 1.1em;
+    }
+
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .win-win-table table,
+    .win-win-table thead,
+    .win-win-table tbody,
+    .win-win-table th,
+    .win-win-table td,
+    .win-win-table tr {
+        display: block;
+    }
+
+    .win-win-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .win-win-table tr {
+        border: 1px solid var(--border-color);
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+
+    .win-win-table td {
+        border: none;
+        border-bottom: 1px solid #f0f0f0;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    .win-win-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: 500;
+        text-align: left;
+        color: var(--cor-texto);
+    }
+
+    .benefits-grid,
+    .steps-container {
+        flex-direction: column;
+    }
+}
+
+/* Estilo para o modal (Minimalista) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-top: 50px;
+}
+.form-container-p{
+    margin: 20px;
+}
+.form-feedback-div{
+	display: none; 
+	text-align: center; 
+	padding: 30px;
+}
+.fa-check-circle{
+	font-size: 3em; 
+	color: var(--success-color); 
+	margin-bottom: 15px;
+}
+.form-feedback-h2{
+	color: var(--success-color); 
+	font-size: 1.8em; 
+	margin-bottom: 15px;
+}
+
+.modal-content {
+    background-color: var(--cor-bg);
+    margin: 5% auto;
+    padding: 40px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--cor-texto);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content input,
+.modal-content textarea {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 1em;
+}
+/*-------fim---------- do modal-----------*/

@@ -1,0 +1,695 @@
+:root {
+    --cor-primaria: #004599; /* Azul vibrante para ações principais */
+    --cor-secundaria: #333;
+    --cor-texto: #555;
+    --cor-fundo-destaque: #d4f3d8;
+    --cor-fundo-cabecalho-rodape: #1a202c;
+    --cor-accent: #FFC107;
+    --cor-bg: #fff;
+    --cor-fundo-corpo: #f0f2f5; /* Fundo levemente cinza */
+    
+    /* Tipografia */
+    --fonte-titulo: 'Poppins', sans-serif;
+    --fonte-corpo: 'Inter', sans-serif;
+
+    /* Espaçamento e Bordas */
+    --espacamento-padrao: 1.0rem; /* 24px */
+    --borda-arredondada-padrao: 12px;
+}
+
+/* Reset Básico e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo-corpo);
+}
+
+
+/* Container de Centralização */
+.container, 
+.footer_content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--espacamento-padrao);
+}
+
+/* Remove sublinhado de links e reset de listas */
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==============================================
+   1. Header (Navbar) - Moderno e Sticky
+   ============================================== */
+.main-header {
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-bg);
+    transition: color 0.3s;
+    cursor: default;
+}
+
+/* Navegação Principal e Efeito Hover */
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: var(--cor-bg);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s; /* Adicionado para suavizar o hover da cor */
+}
+
+.main-nav a:hover {
+    color: var(--cor-accent);
+}
+
+/* Efeito Sublinhado */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-accent);
+    transition: width 0.3s ease-in-out;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Botões de Ação (Entrar/Cadastrar) */
+.btn-nav {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: var(--borda-arredondada-padrao);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-nav.cadastrar {
+    background-color: var(--cor-primaria);
+    color: var(--cor-bg);
+    border-color: var(--cor-primaria);
+    margin-left: 10px;
+}
+
+.btn-nav.cadastrar:hover {
+    background-color: transparent;
+    border-color: var(--cor-accent);
+    transform: translateY(-2px);
+}
+
+.btn-nav.entrar {
+    background-color: transparent;
+    color: #fff;
+    border-color: var(--cor-primaria);
+}
+
+.btn-nav.entrar:hover {
+    border-color: var(--cor-accent);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Submenu */
+.menu-item-com-submenu {
+    position: relative;
+}
+
+.main-nav .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    margin-top: 30px;
+    min-width: 220px;
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: var(--borda-arredondada-padrao);
+}
+
+.menu-item-com-submenu.ativo .submenu {
+    display: block;
+}
+
+.main-nav .submenu .list-submenu {
+    margin-bottom: 10px;
+}
+
+/* ==============================================
+   2. Conteúdo Principal (Hero Section) - Responsivo
+   ============================================== */
+.main_content {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto ; /* Unificado as margens */
+    padding: 3vw 5vw;
+    gap: 40px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* O flex: 1 garante que as seções se dividam igualmente na largura */
+.texto_section,
+.image_section {
+    flex: 1;
+    min-width: 0;
+}
+
+.image_section {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.image_section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--borda-arredondada-padrao);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Tipografia Hero */
+.texto_section h1 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(30px, 5vw, 48px); /* Tipografia Fluida */
+    font-weight: 700;
+    color: var(--cor-secundaria);
+    line-height: 1.2;
+    margin-bottom: var(--espacamento-padrao);
+}
+
+.texto_section p {
+    font-family: var(--fonte-corpo);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--cor-texto);
+    margin-bottom: var(--espacamento-padrao);
+    text-align: justify;
+}
+
+.texto_destaque {
+    font-weight: bold;
+    color: var(--cor-primaria);
+}
+
+/* Botão de Chamada para Ação (botao cadastro) */
+.cadastro_button {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 30px;
+    letter-spacing: 0.5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Elemento Absoluto (Card de Destaque) */
+.absolute-card {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    bottom: -2rem;
+    right: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    min-width: 250px;
+    border-left: 5px solid var(--cor-primaria);
+}
+
+.flex-items-center-gap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-circle {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: var(--cor-fundo-destaque);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-primaria);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.font-medium {
+    font-weight: 600;
+    color: var(--cor-secundaria);
+}
+
+.text-sm {
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+}
+
+/* ==============================================
+   3. Seção "Como Funciona"
+   ============================================== */
+.como-funciona {
+    background-color: #f4f7f9;
+    padding: 0px 20px;
+    font-family: var(--fonte-corpo); /* Usando a variável de fonte padrão */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* Grid de Cards */
+.roles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.role-card {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    flex: 1 1 300px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-top: 5px solid var(--cor-primaria);
+}
+
+.role-card:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.role-card h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.divisor{
+    border: 0;
+    height: 3px;
+    background: linear-gradient(to right, #007bff, #28a745);
+    margin: 25px 0;
+    border-radius: 1px;
+}
+
+.role-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.role-card li {
+    padding-left: 25px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+/*inicio da segunda sessão*/
+.segunda-section{
+    padding: 0 36px;
+}
+/* Destaque e Tabela */
+.remuneracao-destaque {
+    background-color: #e9ecef;
+    font-family: var(--fonte-corpo);
+    border-left: 5px solid var(--cor-primaria);
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 0 auto; /* Unificado margens */
+}
+
+.remuneracao-destaque h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+.remuneracao-destaque h3 {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.remuneracao-destaque p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.tabela-beneficios {
+    width: 100%;
+    max-width: 1200px;
+    margin: 39px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabela-beneficios thead tr {
+    background-color: var(--cor-fundo-cabecalho-rodape); /* Corrigido para a variável de cor escura */
+    color: #ffffff;
+}
+
+.tabela-beneficios th,
+.tabela-beneficios td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.tabela-beneficios tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.tabela-beneficios tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Call to Action Geral */
+.call-to-action {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn-cta {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--cor-primaria); /* Usando a cor primária para consistência */
+    color: #ffffff;
+    border-radius: var(--borda-arredondada-padrao);
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: #00387a; /* Cor levemente mais escura que a primária */
+    transform: translateY(-3px);
+}
+
+/* Estilos de Passo (Steps) */
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    color: var(--cor-texto); /* Usando a variável de cor de texto */
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.step-title {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--cor-secundaria); /* Usando a cor secundária para o título */
+    display: block;
+    margin-bottom: 3px;
+}
+
+.step p {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.benefit {
+    color: #28a745;
+    font-weight: 600;
+    margin-top: 5px !important;
+}
+
+.step i {
+    font-size: 1.5em;
+    color: var(--cor-primaria);
+    padding-top: 5px;
+}
+
+.step.highlight{
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease-in-out;
+    padding: 15px 10px;
+    margin: 10px;
+}
+
+.step.highlight:hover {
+    background-color: #e9ecef;
+    border-left: 4px solid var(--cor-primaria);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
+    cursor: pointer;
+}
+
+/* ==============================================
+   4. Footer - Elegante e Dividido
+   ============================================== */
+.main_footer {
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    color: #ffffff;
+    padding: 40px 0 20px 0;
+    margin-top: 4rem;
+}
+
+.footer_content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+.footer_content i {
+    font-size: 1.5em;
+    padding-top: 5px;
+    gap: 20px;
+}
+
+.footer_links,
+.footer_social,
+.footer_contact {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Links do Rodapé e Efeito Hover */
+.footer_links a,
+.footer_social a,
+.footer_content a {
+    color: var(--cor-bg);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.footer_content a:hover {
+    color: var(--cor-accent);
+}
+
+/* Efeito Sublinhado no Rodapé */
+.footer_links a::after,
+.footer_social a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-accent);
+    transition: width 0.3s ease-in-out;
+}
+
+.footer_links a:hover::after,
+.footer_social a:hover::after {
+    width: 100%;
+}
+
+.footer_content h4 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #aaa;
+}
+
+.footer_content li {
+    margin-bottom: 10px;
+}
+.footer_content li:hover {
+    color: var(--cor-accent);
+}
+
+.footer_contact p {
+    display: flex;
+    align-items: center;
+    line-height: 1.6;
+    color: #fff;
+    font-size: 0.95rem;
+    margin: 20px 0;
+}
+.footer_contact  i{
+    margin-right: 10px;
+}
+
+.footer_bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+.footer_bottom p {
+    font-size: 0.85rem;
+    color: #aaaaaa;
+}
+
+/* ==============================================
+   5. Media Queries (Responsividade)
+   ============================================== */
+
+/* Tablets Maiores/Desktops Menores */
+@media (max-width: 1024px) {
+    .main-nav {
+        margin-left: 20px;
+    }
+     .main_content{
+        display: block;
+        margin: auto;
+    }
+}
+
+/* Layout Mobile (Telas menores que 768px) */
+@media (max-width: 768px) {
+
+    /* Header/Navbar */
+    .main-header .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main_content{
+        display: block;
+        margin: auto;
+    }
+    .main-nav {
+        order: 3;
+        flex-basis: 100%;
+        margin-top: 15px;
+        margin-left: 0;
+    }
+
+    .main-nav ul {
+        justify-content: space-around;
+        gap: 15px;
+    }
+
+    .btn-nav {
+        margin-top: 10px;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Conteúdo Principal (Hero) */
+
+    .texto_section h1 {
+        font-size: clamp(28px, 8vw, 36px);
+    }
+
+    .texto_section p {
+        font-size: 1rem;
+    }
+
+    .image_section {
+        justify-content: center;
+        order: -1;
+    }
+
+    .absolute-card {
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        min-width: auto;
+    }
+
+    /* Rodapé */
+    .footer_content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+.role-card button{
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    color: var(--cor-bg);
+    font-weight: 600;
+    font-size: medium;
+    font-family: var(--fonte-corpo);
+    margin-top: auto;
+    padding: 10px;
+    
+    border-radius: var(--borda-arredondada-padrao);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 2px solid var(--cor-primaria);
+}
+
+
+
+
+.botao:hover {
+    background-color: transparent;
+    color: var(--cor-secundaria);
+    transform: translateY(-3px);
+}

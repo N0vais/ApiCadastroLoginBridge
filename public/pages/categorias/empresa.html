@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto de Inovação Estratégica: Alto Impacto, Custos Inteligentes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../categorias/css/empresa.css">
+</head>
+
+<body>
+
+    <header class="header-empresa">
+        <div class="container">
+            <h1>Estratégia + Execução: Projetos de Alto Impacto para Sua Empresa</h1>
+            <p>Acelere sua inovação com uma equipe de elite de futuros líderes, orientada por um Gerente Sênior e com um
+                investimento inteligentemente otimizado.</p>
+            <a href="#cta" class="btn-accent">Iniciar a Transformação Agora</a>
+        </div>
+    </header>
+
+    <section id="pilares">
+        <div class="container">
+            <h2 class="section-title">Nossa Proposta de Valor Exclusiva</h2>
+            <div class="pillars-grid">
+
+                <div class="pillar-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Mentoria</h3>
+                    <p>Um Gerente de Projetos experiente <em style="font-weight: 700;">acompanha cada etapa</em>,
+                        assegurando metodologias sólidas, entregas profissionais e a mitigação dos riscos.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Inovação Acelerada</h3>
+                    <p>Estudantes altamente motivados trazem o <em style="font-weight: 700;">conhecimento mais fresco da
+                            academia</em>, garantindo soluções criativas e tecnologicamente avançadas para o seu
+                        desafio.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Custo Estratégico</h3>
+                    <p>Estrutura otimizada que resulta em um <em style="font-weight: 700;"> custo significativamente
+                            abaixo do mercado</em>, maximizando o seu Retorno sobre o Investimento (ROI).</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <hr class="divisor">
+    <section id="ganhos">
+        <div class="container-table">
+            <h2 class="section-title">Parceria de Três Vias: Onde Todos Ganham</h2>
+            <div class="win-win-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Stakeholder</th>
+                            <th>Contribuição para o Projeto</th>
+                            <th>Benefício Direto para Sua Empresa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Stakeholder">Sua Empresa</td>
+                            <td data-label="Contribuição">Investimento Otimizado no Projeto.</td>
+                            <td data-label="Benefício Direto">Entrega Profissional e Economia Expressiva.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Stakeholder">Gerente Sênior</td>
+                            <td data-label="Contribuição">Gestão, Orientação e Padrões de Qualidade.</td>
+                            <td data-label="Benefício Direto">Garantia de Qualidade e Redução de Riscos.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Stakeholder">Estudantes/Estagiários</td>
+                            <td data-label="Contribuição">Desenvolvimento de Soluções e Inovação.</td>
+                            <td data-label="Benefício Direto">Motivação Máxima com Apoio a <em
+                                    style="font-weight: 700;"> Certificações Profissionais</em>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="cta">
+        <div class="container">
+            <h2>Pronto para Ter uma Solução de Elite com Orçamento Inteligente?</h2>
+            <p>Conecte-se com nosso Gerente Sênior. Descreva seu desafio e receba uma proposta de valor sem compromisso.
+            </p>
+            <a href="#" class="btn-accent" id="openModal">Fale Conosco e Comece a Inovar</a>
+        </div>
+    </section>
+
+    <!--tela de contato sem cadastro a empresa envia sua proposta de projeto e recebe um email-->
+    <!--MODAL-->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+
+            <div id="form-container">
+                <h2> Entre em contato</h2>
+                <p class="form-container-p">
+                    Descreva brevemente seu projeto ou desafio. Nossa equipe responderá em até 1 dia útil.
+                </p>
+                <form id="projectForm">
+                    <input type="text" placeholder="Seu Nome Completo" required>
+                    <input type="text" placeholder="Empresa / Organização" required>
+                    <input type="email" placeholder="E-mail Corporativo" required>
+                    <textarea placeholder="Detalhes do Projeto (O que você precisa que seja feito?)" rows="4"
+                        required></textarea>
+
+                    <button type="submit" class="btn-cta">Enviar Solicitação</button>
+                </form>
+            </div>
+
+            <div id="form-feedback" class="form-feedback-div">
+                <i class="fas fa-check-circle"></i>
+                <h2 class=" form-feedback-h2">
+                    Proposta Enviada com Sucesso!
+                </h2>
+                <p style="font-size: 1.1em; color: var(--dark-text);">
+                    Agradecemos o seu interesse. Nossa equipe de analistas irá analisar seu desafio. Você receberá uma
+                    resposta detalhada <span class="grif" style="font-weight: 600; color: var(--accent-color);"> mais
+                        rápido possível<br> </span>.(em até 2 dia úteis) no e-mail:
+                    <span id="feedback-email-display"
+                        style="font-weight: 600; color: var(--accent-color); text-decoration: underline;"></span>.
+                </p>
+                <button onclick="document.getElementById('contactModal').style.display='none'" class="btn-cta">
+                    Fechar
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <!---------------------fim do MODAL---------------->
+
+    <!--sessão de passos simples para fazer parte desse projeto-->
+    <section id="como-participar" class="section-card">
+        <h2><i class="fas fa-paper-plane"></i> 3 Passos Simples para Participar</h2>
+        <div class="steps-container">
+            <div class="step-item">
+                <span class="step-number">1</span>
+                <h3>Acesse o Cadastro</h3>
+                <p>Na página principal, selecione o perfil <i>"Sou Empresa"</i> para iniciar seu registro.</p>
+            </div>
+            <div class="step-item">
+                <span class="step-number">2</span>
+                <h3>Preencha Seu Perfil</h3>
+                <p>Forneça seus dados, e submeta as opçoes de seu projeto para que um analisata posso direcionar para o
+                    gerente.</p>
+            </div>
+            <div class="step-item">
+                <span class="step-number">3</span>
+                <h3>Comece a Interagir!</h3>
+                <p>Após a confirmação do cadastro, acompanhe seu projeto e parte do desenvolvimento que estão sendo
+                    desenvolvidas.</p>
+            </div>
+        </div>
+
+        <a href="/pages/categorias/forms/cadastro.html" class="button-action">
+            Quero Me Cadastrar Agora!
+        </a>
+
+        <p class="note">É rápido, fácil e o futuro do seus projetos lhe aguardão está esperando o que vem!.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Bridge Projects. Projeto de Integração Universidade-Empresa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../categorias/js/empresa.js"></script>
+</body>
+
+</html>

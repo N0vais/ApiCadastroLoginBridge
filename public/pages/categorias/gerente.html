@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GERENTE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../categorias/css/gerente.css">
+</head>
+
+<body>
+
+    <header class="header-empresa">
+        <div class="container">
+            <h1>Estratégia e transformação de projetos de alto impacto, uma jornada colaborativa orientando e
+                participando de cada processo de desenvolvimento gerando resultado e fortalecendo sua liderança.</h1>
+            <p>"Assuma o protagonismo como Gerente e conduza uma equipe rumo à inovação com apoio de um investimento
+                inteligente e sua liderança transformadora."</p>
+        </div>
+    </header>
+
+    <main class="container-gerente">
+
+        <section class="section-card-gerente">
+            <h2><i class="fas fa-cogs"></i> Visão Geral das Funções</h2>
+            <hr class="divisor">
+            <ul>
+                <li><span style="font-weight: 700;">Gestão de Projeto:</span> Garantir a entrega do projeto ao cliente
+                    dentro do prazo com os reqisitos e do escopo definido.</li>
+                <li><span style="font-weight: 700;">Orientação Pedagógica:</span> Mentorar e desenvolver as habilidades
+                    técnicas e comportamentais dos estagiários.</li>
+                <li><span style="font-weight: 700;">Preparação para Certificações:</span> Integrar o aprendizado do
+                    projeto com a preparação para as provas de certificações.</li>
+            </ul>
+        </section>
+
+        <!--como sera o incentivo para o gerente-->
+
+        <section class="section-card-gerente">
+            <h2>Avaliação de Desempenho e Incentivo</h2>
+            <hr class="divisor">
+            <p>Seu bônus de incentivo é calculado com base nas seguintes métricas: 
+                Que sera integrada conforme feedback da empresa contratante a das skills dos alunos envolvidos conforme seu desenpenho.</p>
+            <div class="metricas-input">
+                <label for="sucessoProjeto">Sucesso do Projeto (0-100%):</label>
+                <input type="number" id="sucessoProjeto" min="0" max="100" value="70">
+
+                <label for="desenvolvimentoEstagiarios">Desenvolvimento dos Estagiários (0-100%):</label>
+                <input type="number" id="desenvolvimentoEstagiarios" min="0" max="100" value="85">
+
+                <label for="preparacaoCertificacao">Preparação para Certificação (0-100%):</label>
+                <input type="number" id="preparacaoCertificacao" min="0" max="100" value="90">
+
+                <button onclick="calcularIncentivo()">Calcular Bônus</button>
+            </div>
+
+            <div class="resultado">
+                <h4>Pontuação Final do Incentivo: <span id="pontuacaoFinal">0%</span></h4>
+                <p>Status: <span id="statusIncentivo">Aguardando cálculo...</span></p>
+                <a href="/pages/categorias/forms/cadastro.html" class="button-action">
+                Quero Me Cadastrar Agora!
+            </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bridge Projects. Projeto de Integração Universidade-Empresa. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../categorias/js/gerente.js"></script>
+</body>
+</html>
