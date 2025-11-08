@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repositório de Projetos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --cor-primaria: #004599;
+            --cor-secundaria: #6c757d;
+            --cor-texto: #555;
+            --cor-fundo-destaque: #d4f3d8;
+            --cor-fundo-cabecalho-rodape: #1a202c;
+            --cor-accent: #FFC107;
+            --cor-bg: #fff;
+            --cor-top-tex: #d0c7ed;
+            --cor-fundo-corpo: #f0f2f5;
+            /* Fundo levemente cinza */
+
+            /* Tipografia */
+            --fonte-titulo: 'Poppins', sans-serif;
+            --fonte-corpo: 'Inter', sans-serif;
+
+            /* 24px */
+            --borda-arredondada-padrao: 12px;
+            --shadow-light: 0 0 35px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--fonte-corpo);
+            background: var(--cor-fundo-corpo);
+            color: var(--cor-texto);
+        }
+
+        header {
+            background: var(--cor-fundo-cabecalho-rodape);
+            color: var(--cor-bg);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: var(--fonte-titulo);
+            font-size: 2.5rem;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .project-card {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 1.5rem;
+            background: var(--cor-bg);
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            position: relative;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            margin: 0.5rem 0;
+            color: var(--cor-primaria);
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .badge {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--borda-arredondada-padrao);
+            font-size: 0.8rem;
+        }
+
+        .students {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .students img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--cor-primaria);
+        }
+
+        .nav-buttons {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .nav-buttons button {
+            background: var(--cor-primaria);
+            color: var(--cor-bg);
+            border: 1px solid var(--cor-primaria);
+            padding: 10px 15px;
+            margin: 0 10px;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .nav-buttons button:hover {
+            background: transparent;
+            color: var(--cor-fundo-cabecalho-rodape);
+            border: 1px solid var(--cor-accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--cor-fundo-cabecalho-rodape);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Repositório de Projetos</h1>
+        <p>Veja os projetos incríveis criados por nossos alunos</p>
+    </header>
+
+    <div class="carousel-container">
+        <div class="carousel" id="carousel"></div>
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">◀</button>
+            <button onclick="nextSlide()">▶</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Bridge Projects. Projeto de Integração Universidade-Empresa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const projects = [
+            {
+                title: "Plataforma de Saúde Mental",
+                image: "https://agiletech.vn/wp-content/uploads/2022/07/mental-health-app-1024x576.png",
+                tech: ["React Native", "Firebase", "Figma"],
+                students: [
+                    "https://randomuser.me/api/portraits/women/44.jpg",
+                    "https://randomuser.me/api/portraits/men/32.jpg"
+                ]
+            },
+            {
+                title: "Dashboard de Vendas",
+                image: "https://datajug.com.br/assets/images/dashboards/datapharma.png",
+                tech: ["Vue.js", "MongoDB"],
+                students: [
+                    "https://randomuser.me/api/portraits/women/68.jpg",
+                    "https://randomuser.me/api/portraits/men/45.jpg"
+                ]
+            },
+            {
+                title: "Site de Educação Inclusiva",
+                image: "https://themewagon.com/wp-content/uploads/2022/08/Frame-3710-1-1.png",
+                tech: ["HTML", "CSS", "JavaScript", "node.js"],
+                students: [
+                    "https://randomuser.me/api/portraits/women/12.jpg",
+                    "https://randomuser.me/api/portraits/men/22.jpg"
+                ]
+            }
+        ];
+
+        const carousel = document.getElementById("carousel");
+        let currentIndex = 0;
+
+        function renderCarousel() {
+            carousel.innerHTML = "";
+            const project = projects[currentIndex];
+            const card = document.createElement("div");
+            card.className = "project-card";
+            card.innerHTML = `
+        <img src="${project.image}" alt="${project.title}" />
+        <h3>${project.title}</h3>
+        <div class="badges">
+          ${project.tech.map(t => `<span class="badge">${t}</span>`).join("")}
+        </div>
+        <div class="students">
+          ${project.students.map(s => `<img src="${s}" alt="Aluno" />`).join("")}
+        </div>
+      `;
+            carousel.appendChild(card);
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % projects.length;
+            renderCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+            renderCarousel();
+        }
+
+        renderCarousel();
+    </script>
+</body>
+
+</html>

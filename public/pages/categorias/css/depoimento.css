@@ -1,0 +1,258 @@
+:root {
+    --cor-primaria: #004599;
+    /* Azul vibrante para ações principais */
+    --cor-secundaria: #333;
+    --cor-texto: #555;
+    --cor-fundo-destaque: #d4f3d8;
+    --cor-fundo-cabecalho-rodape: #1a202c;
+    --cor-accent: #FFC107;
+    --cor-bg: #fff;
+    --cor-fundo-corpo: #f0f2f5;
+    /* Fundo levemente cinza */
+
+    /* Tipografia */
+    --fonte-titulo: 'Poppins', sans-serif;
+    --fonte-corpo: 'Inter', sans-serif;
+
+    /* Espaçamento e Bordas */
+    --espacamento-padrao: 1.0rem;
+    /* 24px */
+    --borda-arredondada-padrao: 12px;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo-corpo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Títulos */
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: var(--cor-bg);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 1.2em;
+    color: var(--cor-accent);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Carrossel de Depoimentos */
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+    min-width: 98%;
+    padding: 30px;
+    margin: 0 15px;
+    /* Espaçamento entre os cards */
+    background: var(--cor-fundo-corpo);
+    border-radius: var(--borda-arredondada-padrao);
+    box-shadow: var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Estado Ativo/Visível */
+.testimonial-card.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--cor-secundaria);
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
+    /* Efeito de brilho */
+}
+.topHeader {
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    margin: 0;
+    padding: 20px;
+}
+
+.quote {
+    font-size: 1.3em;
+    font-style: italic;
+    color: var(--cor-texto);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.quote::before,
+.quote::after {
+    content: '"';
+    font-size: 2em;
+    color: var(--cor-primaria);
+    line-height: 0;
+    position: absolute;
+    opacity: 0.2;
+}
+
+.quote::before {
+    top: 0;
+    left: -10px;
+}
+
+.quote::after {
+    bottom: 0;
+    right: -10px;
+    transform: rotate(180deg);
+}
+
+.name {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--cor-primaria);
+}
+
+.role {
+    font-size: 1em;
+    color: #666;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+/* Botões de Navegação */
+.slider-controls {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.nav-button {
+    background: var(--cor-primaria);
+    color: white;
+    border: 1px solid var(--cor-primaria);
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+    background: transparent;
+    color: var(--cor-fundo-cabecalho-rodape);
+    border: 1px solid var(--cor-accent);
+}
+
+/* Pontos de navegação (Dots) */
+.dots-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: var(--cor-primaria);
+    transform: scale(1.5);
+}
+
+/* Pitch de Inovação/Mentoria */
+.pitch-section {
+    background: var(--cor-fundo-cabecalho-rodape);
+    color: white;
+    padding: 60px 20px;
+    margin-top: 60px;
+    border-radius: var(--borda-arredondada-padrao);
+    text-align: center;
+}
+
+.pitch-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+.pitch-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.pitch-button {
+    background: var(--cor-secundaria);
+    color: var(--cor-bg);
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: var(--borda-arredondada-padrao);
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.pitch-button:hover {
+    background: transparent;
+    color: var(--cor-bg);
+    border: 1px solid var(--cor-accent);
+    transform: translateY(-2px);
+    /* Efeito 3D */
+}
+
+.divisor {
+    border: 0;
+    height: 3px;
+    background: linear-gradient(to right, #007bff, #28a745);
+    margin: 25px 0;
+    border-radius: 1px;
+}
+
+footer {
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    color: #adb5bd;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}

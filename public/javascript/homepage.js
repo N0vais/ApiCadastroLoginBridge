@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cards = document.querySelectorAll('.role-card');
 
+    const botao = document.getElementById('btnSaibaMais');
+    const botaoGerente = document.getElementById('saibaMaisGerente');
+
     // Medida de segurança: Garante que o menu comece escondido
     menuItemComSubmenu.classList.remove('ativo');
 
@@ -44,5 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
         });
     });
-    
+
+    botao.addEventListener('click', function () {
+        // 3. Executa o redirecionamento quando o botão é clicado
+        window.location.href = "/pages/categorias/saibaMaisEmpresa.html";
+    });
+
+    botaoGerente.addEventListener('click', function () {
+        // 3. Executa o redirecionamento quando o botão é clicado
+        window.location.href = "/pages/categorias/saibaMaisGerente.html";
+    });
+
 });

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transforme Sua Ideia em Solução Digital</title>
+    <link rel="stylesheet" href="css/saibaMaisEmpresa.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Transforme sua Ideia em Solução Digital</h1>
+        <p>Desenvolvemos software, apps e plataformas web com qualidade profissional e investimento acessível</p>
+    </header>
+
+    <section>
+        <div class="grid">
+            <div class="card">
+                <img src="https://artia.com/wp-content/uploads/2022/03/Beneficios-de-um-software-de-gestao-de-projetos.jpg"
+                    alt="Software de Gestão">
+                <div class="card-content">
+                    <h3>Software de Gestão</h3>
+                    <p>Desenvolvido para uma empresa de logística, com dashboards, relatórios e controle de estoque em
+                        tempo real.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://www.objective.com.br/wp-content/uploads/2020/05/artigo-desenvolvimento-de-aplicativos-03.png"
+                    alt="Aplicativo Mobile">
+                <div class="card-content">
+                    <h3>Aplicativo Mobile</h3>
+                    <p>App de agendamento de serviços com notificações push, geolocalização e integração com pagamentos.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://dominit.com.br/wp-content/uploads/2024/05/etapas-no-desenvolvimento-de-software.jpg"
+                    alt="Plataforma Web">
+                <div class="card-content">
+                    <h3>Plataforma Web</h3>
+                    <p>Portal de atendimento ao cliente com chatbot, área do usuário e painel administrativo completo.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-section">
+            <h2>🎥 Assista ao nosso Pitch</h2>
+            <p>Entenda como podemos transformar sua ideia em um projeto de sucesso</p>
+            <iframe src="https://www.youtube.com/embed/kA8K4wZlgSQ" allowfullscreen></iframe>
+        </div>
+
+        <div class="cta">
+            <h2>🚀 Pronto para começar?</h2>
+            <p>Cadastre sua empresa e receba uma análise gratuita da sua proposta</p>
+            <button id="cadastroBtn" onclick="mostrarMensagem()">Quero Me Cadastrar</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Bridge Projects. Projeto de Integração Universidade-Empresa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function mostrarMensagem() {
+            const btn = document.getElementById("cadastroBtn");
+            btn.classList.add("clicked");
+            btn.textContent = "Redirecionando!";
+            setTimeout(() => {
+                window.location.href = "../categorias/forms/cadastro.html";
+            }, 3000); // 3 segundos
+        }
+    </script>
+
+</body>
+
+</html>

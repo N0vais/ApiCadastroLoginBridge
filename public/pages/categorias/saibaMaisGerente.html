@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaga: Gerente de Projeto - Liderança & Inovação</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>/* Reset Básico e Fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ------------------ Botão CTA (Chamada para Ação) ------------------ */
+.cta-button {
+    display: inline-block;
+    background-color: #007bff; /* Azul primário */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.big-cta {
+    font-size: 1.5em;
+    padding: 20px 40px;
+}
+
+/* ------------------ Seção HERO ------------------ */
+.hero-section {
+    background-color: #1e2a38; /* Fundo escuro para impacto */
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero-section .subtitle {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.hero-image-placeholder {
+    height: 300px;
+    background-color: #2c3e50;
+    margin-top: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* ------------------ Seção Oportunidade/Pilares ------------------ */
+.opportunity-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: white;
+}
+
+.opportunity-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #1e2a38;
+}
+
+.opportunity-section p {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.pillar-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+    border-left: 5px solid #007bff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.pillar-card h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+/* ------------------ Seção de Benefícios ------------------ */
+.benefits-section {
+    background-color: #e3f2fd; /* Azul muito claro */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.benefits-section h2 {
+    color: #1e2a38;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+}
+
+.benefit-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    text-align: left;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-item span {
+    font-size: 1.8em;
+    margin-right: 15px;
+    color: #007bff;
+    line-height: 1;
+}
+
+.benefit-item.highlight {
+    background-color: #fffde7; /* Amarelo muito claro para destacar a certificação */
+    border: 1px solid #ffcc00;
+}
+
+/* ------------------ Seção CTA Final ------------------ */
+.final-cta-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #1e2a38;
+    color: white;
+}
+
+.final-cta-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.final-cta-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* ------------------ Footer ------------------ */
+footer {
+    background-color: #111;
+    color: #aaa;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* ------------------ Media Queries para Responsividade ------------------ */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+    .hero-section .subtitle, .final-cta-section p {
+        font-size: 1.1em;
+    }
+    .cta-button {
+        width: 100%;
+    }
+    .big-cta {
+        font-size: 1.2em;
+        padding: 15px 30px;
+    }
+    .pillars-grid, .benefit-list {
+        grid-template-columns: 1fr;
+    }
+    .pillar-card {
+        padding: 20px;
+    }
+}</style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1>Gerente de Projeto: Lidere a Inovação, Molde o Futuro.</h1>
+            <p class="subtitle">Seja o **Intermediador** que transforma visões de negócios em realidade e o **Mentor** que desenvolve a próxima geração de talentos tech.</p>
+            <a href="#application-form" id="main-cta" class="cta-button">Candidate-se Agora e Impulsione a Excelência</a>
+            <div class="hero-image-placeholder">
+                
+            </div>
+        </div>
+    </header>
+
+    <section class="opportunity-section">
+        <div class="container">
+            <h2>Mais que Entrega: Desenvolvimento, Estratégia e Liderança 360°.</h2>
+            <p>Esta não é apenas uma vaga. É uma oportunidade para exercer a **Gestão 360°**, onde seu impacto transcende o cronograma, focando na performance do projeto e no crescimento exponencial da equipe.</p>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3>1. Estratégia de Sucesso 📊</h3>
+                    <p>Transformar o Escopo, Objetivos e Requisitos da empresa em um plano de projeto claro, avaliando viabilidade e definindo **KPIs de entrega e sucesso**.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>2. Gestão 360° do Projeto ⚙️</h3>
+                    <p>Supervisionar o ciclo de vida, **alocando alunos com as skills certas**, garantindo padrões de qualidade, prazos e uma **comunicação fluida**.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>3. Mentoria e Preparação Técnica 🎓</h3>
+                    <p>Atuar como **mentor e treinador técnico**, preparando e capacitando os membros da equipe. Guiá-los no caminho para a excelência e certificação formal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <h2>Invista em Si Mesmo: Benefícios Exclusivos para Líderes.</h2>
+            <div class="benefit-list">
+                <div class="benefit-item">
+                    <span>✅</span>
+                    <p><strong>Salário e Benefícios Competitivos:</strong> Remuneração alinhada com suas responsabilidades de gestão e liderança.</p>
+                </div>
+                <div class="benefit-item highlight">
+                    <span>🏆</span>
+                    <p><strong>Patrocínio Total de Certificações:</strong> Cobertura integral dos custos para as **certificações** mais valorizadas (PMP, SCRUM, etc.).</p>
+                </div>
+                <div class="benefit-item">
+                    <span>🌟</span>
+                    <p><strong>Ambiente de Inovação:</strong> Trabalhe em projetos de alto impacto, que definem o futuro tecnológico de nossos clientes.</p>
+                </div>
+                <div class="benefit-item">
+                    <span>💡</span>
+                    <p><strong>Autonomia:</strong> Liberdade para implementar as melhores práticas de gestão e liderança técnica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta-section" id="application-form">
+        <div class="container">
+            <h2>Seu Próximo Passo Começa Aqui.</h2>
+            <p>Se você está pronto para aceitar o desafio de **entregar com excelência** e, simultaneamente, **desenvolver futuros líderes**, queremos conhecer você.</p>
+            <a href="#" class="cta-button big-cta">Quero ser o Próximo Gerente-Mentor!</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Vagas Tech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>document.addEventListener('DOMContentLoaded', function() {
+    const ctaButton = document.querySelector('.big-cta');
+
+    // Função para simular a ação de candidatura
+    function handleCtaClick(event) {
+        event.preventDefault(); // Impede o link de recarregar a página
+        
+        // Log para console (simulando a abertura de um formulário)
+        console.log('CTA Principal Clicado: Redirecionando para o Formulário de Candidatura...');
+
+        // Exemplo: Mostrar uma mensagem simples na tela (pode ser substituído por um modal/pop-up)
+        alert('Obrigado pelo seu interesse! Você será redirecionado(a) para o formulário de inscrição.');
+
+        // Neste ponto, você adicionaria o código para redirecionar para o formulário de candidatura real
+        // Ex: window.location.href = 'link-do-formulario-externo';
+    }
+
+    // Adiciona o listener de evento ao botão CTA
+    if (ctaButton) {
+        ctaButton.addEventListener('click', handleCtaClick);
+    }
+});</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+:root {
+    --cor-primaria: #007bff;
+    --cor-secundaria: #004599;
+    --cor-texto: #555;
+    --cor-fundo-destaque: #d4f3d8;
+    --cor-fundo-cabecalho-rodape: #1a202c;
+    --cor-accent: #FFC107;
+    --cor-bg: #fff;
+    --cor-top-tex:#d0c7ed;
+    --cor-fundo-corpo: #f0f2f5;
+    /* Fundo levemente cinza */
+
+    /* Tipografia */
+    --fonte-titulo: 'Poppins', sans-serif;
+    --fonte-corpo: 'Inter', sans-serif;
+
+    /* Espaçamento e Bordas */
+    --border-color: #dee2e6;
+    --espacamento-padrao: 1.0rem;
+    /* 24px */
+    --borda-arredondada-padrao: 12px;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    margin: 0;
+    font-family: var(--fonte-corpo);
+    background: var(--cor-fundo-corpo);
+    color: var(--cor-texto);
+}
+
+header {
+    background: var(--cor-fundo-cabecalho-rodape);
+    color: var(--cor-bg);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: auto;
+}
+
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--cor-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.2rem;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    color: var(--cor-primaria);
+}
+
+.cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.cta button {
+    background: var(--cor-secundaria);
+    color: var(--cor-bg);
+    border: 1px solid var(--cor-secundaria);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: var(--borda-arredondada-padrao);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cta button:hover {
+    background: transparent;
+    color: var(--cor-fundo-cabecalho-rodape);
+    border: 1px solid var(--cor-accent);
+}
+
+.cta button.clicked {
+    background-color: var(--cor-secundaria); 
+    color: var(--cor-bg);
+  }
+
+.video-section {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.video-section iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border: 2px solid var(--cor-accent);
+    border-radius: 10px;
+}
+
+footer {
+    background: var(--cor-fundo-cabecalho-rodape);
+    color: var(--cor-bg);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 4rem;
+}
