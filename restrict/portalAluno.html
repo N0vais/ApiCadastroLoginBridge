@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal-cliente-aluno</title>
+    <link rel="stylesheet" href="portal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <!--navegador da pagina-->
+    <header class="main-header">
+        <div class="container-nav">
+            <h1 class="logo"><a href="#">BRIDGE PROJECTS</a></h1>
+            <div class="hanburger">
+                <a href="#" id="menuToggle"><i class="fas fa-bars"></i></a>
+            </div>
+            <nav class="main-nav-sub" id="menu-opcoes">
+                <div class="search-bar">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <input type="text" placeholder="pesquisa por nome..." id="search-input">
+                </div>
+
+            </nav>
+            <a href="#" class="btn-nav encerrar primary" id="openLoginButton">Encerrar</a>
+        </div>
+    </header>
+    <!--fim do header navegador-->
+
+    <!--div que vai agrupar o aside e a main-->
+    <div class="portal-container">
+        <!--inicio do menu lateral-->
+        <aside class="sidebar" id="mySidebar">
+
+            <div class="user-profile">
+                <img src="../image/dan8_rosto_0.jpeg" alt="Daniel S" class="profile-pic">
+                <div class="user-info">
+                    <span class="name">Daniel S</span>
+                    <span class="title">Gerente </span>
+                </div>
+            </div>
+            <hr class="divisor">
+            <nav class="main-nav">
+                <ul class="nav-section">
+                    <li class="nav-item"><a href="#atividade"><i class="fas fa-history"></i> Atividade</a></li>
+                    <li class="nav-item active"><a href="#dashbord"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li class="nav-item"><a href="#menbros"><i class="fas fa-user-friends"></i> Membros</a></li>
+                    <li class="nav-item"><a href="#conpartilhamento"><i
+                                class="fas fa-share-alt"></i>Compartilhamentos</a></li>
+                    <li class="nav-item"><a href="#config"><i class="fas fa-cog"></i> Configurações</a></li>
+
+                    <li class="nav-item"><a href="notificações"><i class="fas fa-bell icon-btn"></i>Notificações</a>
+                    </li>
+                    <li class="nav-item"><a href="menssagens"><i class="fas fa-envelope icon-btn"></i>Menssagens</a>
+                    </li>
+                    <li class="nav-item"><a href="#excluir"><i class="fas fa-trash "></i>Excluir</a></li>
+
+                </ul>
+            </nav>
+        </aside>
+        <!--fim do aside -->
+
+        <!--inicio do main-->
+        <main class="main-content" id="mainContent">
+
+            <div class="dashboard-grid">
+
+                <div class="grid-main-content">
+                    <div class="dashboard-title">Dashboard</div>
+
+                    <div class="card card-recently-opened">
+                        <h4>Recently opened <a href="#" class="show-all">show all <span>3 groups</span></a></h4>
+                        <div class="recent-items-container">
+                            <div class="recent-item">
+                                <div class="icon-block"><i class="fas fa-infinity"></i></div>
+                                <div class="item-label">SCP Installation</div>
+                                <div class="avatars-group">
+                                    <img src="../image/dan8_rosto_0.jpeg" alt="User">
+                                    <img src="../image/dan8_rosto_0.jpeg" alt="User">
+                                    <img src="../image/dan8_rosto_0.jpeg" alt="User">
+                                    <img src="../image/dan8_rosto_0.jpeg" alt="User">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-tasks">
+                        <h4>Tasks - Category 1</h4>
+                        <div class="task-list">
+                            <div class="task-item">
+                                <span class="task-title">Create New Filters Controls</span>
+                                <span class="tag tag-blue">TODO</span>
+                                <div class="avatars-group">
+                                    <img src="https://via.placeholder.com/20" alt="User">
+                                </div>
+                                <span class="due-date">03 jun 2023</span>
+                            </div>
+                            <div class="task-item">
+                                <span class="task-title">New Site Endpoint (change...)</span>
+                                <span class="tag tag-green">COMPLETED</span>
+                                <div class="avatars-group">
+                                    <img src="https://via.placeholder.com/20" alt="User">
+                                    <img src="https://via.placeholder.com/20" alt="User">
+                                </div>
+                                <span class="due-date">Two weeks ago</span>
+                            </div>
+                            <div class="task-item add-new"><i class="fas fa-plus"></i> ADD A TASK</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-widgets">
+
+                    <div class="card card-comments">
+                        <h4>Comments</h4>
+                        <div class="comment-item">
+                            <img src="https://via.placeholder.com/30" alt="User" class="comment-avatar">
+                            <p><strong>Alice Kingsford:</strong> review this document.</p>
+                        </div>
+                        <div class="comment-item">
+                            <img src="https://via.placeholder.com/30" alt="User" class="comment-avatar">
+                            <p><strong>Amy Sims:</strong> OK, GUYS! I want through all notes and fixes it.</p>
+                        </div>
+                    </div>
+
+                    <div class="card card-charts">
+                        <div class="chart-block"><canvas id="widgetChart1"></canvas></div>
+                        <div class="chart-block"><canvas id="widgetChart2"></canvas></div>
+                        <div class="chart-block wide"><canvas id="widgetChart3"></canvas></div>
+                        <div class="chart-block"><canvas id="widgetChart4"></canvas></div>
+                    </div>
+                </div>
+
+                <div class="grid-lists">
+                    <div class="list-section">
+                        <span class="list-title">UPCOMING PROJECTS</span>
+                        <div class="list-item"><span>DS</span> Project XYZ</div>
+                        <div class="list-item"><span>RD</span> Rules</div>
+                    </div>
+
+                    <div class="list-section">
+                        <span class="list-title">CLIENTS</span>
+                        <div class="list-item"><span>GE</span> General Electrics</div>
+                        <div class="list-item"><span>AC</span> Innovation Co.</div>
+                    </div>
+
+                    <div class="list-section">
+                        <span class="list-title">CONTACTS</span>
+                        <div class="contact-card">
+                            <img src="https://via.placeholder.com/30" alt="User">
+                            <div class="contact-info">
+                                <span>Amelia Sheikh</span>
+                                <small>British Airways</small>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <img src="https://via.placeholder.com/30" alt="User">
+                            <div class="contact-info">
+                                <span>Chiraz Akachi</span>
+                                <small>Innovation Co.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <!--fim do main-->
+
+    </div>
+    <!--fim da div de agrupamento-->
+
+    <script>
+        // Função principal para alternar o menu
+        function toggleMenu() {
+            // 1. Seleciona os elementos
+            const sidebar = document.getElementById('mySidebar');
+            const icon = document.querySelector('#menuToggle i'); // Seleciona o elemento <i> dentro do link
+            const mainContent = document.getElementById('mainContent');
+            // 2. Alterna a classe 'open' na sidebar
+            sidebar.classList.toggle('open');
+            mainContent.classList.toggle('pushed');
+            // 3. Verifica se a sidebar está aberta e muda o ícone
+            if (sidebar.classList.contains('open')) {
+                // Se estiver aberta, muda o ícone para 'X' (times)
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times'); // 'fa-times' é o ícone de 'X' ou fechar
+            } else {
+                // Se estiver fechada, muda o ícone de volta para o hambúrguer
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+
+        // 4. Adiciona um "ouvinte de evento" ao link do hambúrguer
+        document.getElementById('menuToggle').addEventListener('click', function (event) {
+            event.preventDefault(); // Impede o link de navegar ou rolar para o topo
+            toggleMenu(); // Chama a função que faz toda a mágica
+        });
+    </script>
+
+</body>
+
+</html>

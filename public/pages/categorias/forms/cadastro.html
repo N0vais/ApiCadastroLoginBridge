@@ -37,7 +37,7 @@
         </div>
 
         <form class="container" id="registration-form">
-            
+            <!--div empresa cnpj-->
             <div id="cnpj-screen" class="form-section hidden">
                 <h2 class="title" id="cnpj-title">Para começarmos, qual o CNPJ da sua empresa?</h2>
                 <div class="input-group">
@@ -76,8 +76,8 @@
             <div id="personal-data-screen" class="form-section hidden">
                 <h2 class="title" id="personal-data-title">Complete seus dados:</h2>
                 <div class="input-group">
-                    <label for="full-name">Nome Completo</label>
-                    <input type="text" id="full-name" placeholder="Seu nome">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" placeholder="Seu nome">
                 </div>
                 <div class="input-group">
                     <label for="job-title">Sua Função</label>
@@ -89,7 +89,6 @@
                     <i class="fas fa-arrow-left"></i> Voltar
                 </button>
             </div>
-
 
             <div id="email-screen" class="form-section hidden">
                 <h2 class="title">Informe seu e-mail</h2>
@@ -141,10 +140,10 @@
             <h1>Cadastro Finalizado!</h1>
             <p>Seu perfil foi criado com sucesso. Você será redirecionado em breve.</p>
             <p>Obrigado por se juntar a nós!</p>
-            <button type="button" class="button" >Ir para o Login</button>
+            <button type="button" class="button" onclick="abrirModalLogin()">Ir para o Login</button>
         </div>
 
     </div>
-    <script src="/pages/categorias/js/cadastro.js"></script>
+    <script src="../js/cadastro.js"></script>
 </body>
 </html>

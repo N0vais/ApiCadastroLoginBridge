@@ -31,7 +31,7 @@ const confirmBtn = $('#confirm-btn');
 const editBtn = $('#edit-btn');
 
 // Elementos da tela de Dados Pessoais
-const fullNameInput = $('#full-name');
+const fullNameInput = $('#nome');
 const jobTitleInput = $('#job-title');
 const personalDataTitle = $('#personal-data-title'); // Para mudar o título da tela
 const nextPersonalDataBtn = $('#next-personal-data-btn');
@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //inico do comtroledo botao voltar
 // Mapeamento de telas e botões de voltar
-const allBackButtons = $$('.back-btn'); 
+const allBackButtons = $$('.back-btn');
 
 // 2. Funções de Transição de Tela 
 
@@ -370,7 +370,7 @@ profileCards.forEach(card => {
         jobTitleInput.value = '';
         emailInput.value = '';
         // Limpar dados do objeto companyData (opcional, mas recomendado)
-        companyData = { profile: currentProfile }; 
+        companyData = { profile: currentProfile };
 
         // 2. Lógica de Perfil Específica
         if (currentProfile === 'aluno') {
@@ -432,29 +432,9 @@ function togglePasswordVisibility(inputId, iconId) {
 }
 
 // 10. Lógica de Finalização de Cadastro (SUBMIT) 
-$('#registration-form').addEventListener('submit', (e) => {
-    e.preventDefault();
 
-    checkFinalValidation();
-
-    if (submitBtn.disabled) {
-        console.error("Cadastro bloqueado devido a validações não atendidas.");
-        return;
-    }
-
-    companyData.password = passwordInput.value; // Apenas para fins de debug
-    console.log("Perfil e Dados Finais:", companyData.profile, companyData);
-
-    goToScreen('confirmation-screen');
-
-    setTimeout(() => {
-        console.log("Redirecionando para a página de login...");
-        window.location.href = '/';
-    }, 3000);
-});
 
 // 10. Lógica de Finalização de Cadastro (SUBMIT)
-
 // Objeto para exibir mensagens de erro/sucesso do servidor
 const submissionMessage = $('#submission-message'); // Supondo que você tenha um elemento no HTML para isso
 
@@ -467,8 +447,8 @@ $('#registration-form').addEventListener('submit', async (e) => { // Tornar a fu
         console.error("Cadastro bloqueado devido a validações não atendidas.");
         // Exibir erro visualmente
         if (submissionMessage) {
-             submissionMessage.textContent = 'Por favor, corrija os erros de validação antes de continuar.';
-             submissionMessage.classList.add('error');
+            submissionMessage.textContent = 'Por favor, corrija os erros de validação antes de continuar.';
+            submissionMessage.classList.add('error');
         }
         return;
     }
@@ -484,15 +464,10 @@ $('#registration-form').addEventListener('submit', async (e) => { // Tornar a fu
 
     try {
         // 2. Chamada à API para salvar os dados-------------
-
-
-
-
-
-
-
         //trocar a api
-        const response = await fetch('SUA_URL_DO_BACKEND/api/register', { // Substitua pela URL real da sua API
+        const apiUrl = '/alunos';
+
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -539,3 +514,9 @@ $('#registration-form').addEventListener('submit', async (e) => { // Tornar a fu
         submitBtn.disabled = false; // Permite tentar novamente
     }
 });
+
+//função que ira redirecionar o usuario para o login apos o cadastro
+
+function abrirModalLogin() {
+  window.location.href = '/'; 
+}

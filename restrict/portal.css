@@ -1,0 +1,279 @@
+:root {
+    --cor-primaria: hsl(210, 100%, 30%);
+    --cor-secundaria: #333;
+    --cor-texto: #b8b9bb;
+    --cor-fundo-destaque: #d4f3d8;
+    --cor-fundo-cabecalho-rodape: hsl(220, 26%, 14%);
+    --cor-accent: #FFC107;
+    --cor-bg: #fff;
+    --cor-fundo-corpo: #f0f2f5;
+
+    /* Tipografia */
+    --fonte-titulo: 'Poppins', sans-serif;
+    --fonte-corpo: 'Inter', sans-serif;
+
+    /* Espaçamento e Bordas */
+    --espacamento-padrao: 1.0rem;
+    --border-color: #e5e5e5;
+    /* 24px */
+    --borda-arredondada-padrao: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--cor-fundo-corpo);
+    overflow: hidden;
+}
+
+.main-header {
+    background-color: var(--cor-fundo-cabecalho-rodape);
+    color: var(--cor-bg);
+    padding: 0 50px;
+}
+
+.container-nav {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--espacamento-padrao);
+}
+
+.logo a {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-bg);
+    transition: color 0.3s;
+    cursor: default;
+    text-decoration: none;
+}
+
+.hanburger a {
+    color: var(--cor-bg);
+    font-size: 25px;
+}
+
+.hanburger a:hover {
+    color: var(--cor-accent);
+}
+
+.main-nav-sub {
+    align-items: center;
+    width: 80vw;
+    padding: 0 25px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 4px 10px;
+    border: 1px solid var(--border-color);
+    background-color: #eee9e9;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    width: 50vw;
+}
+
+.search-bar i {
+    color: #1a202c;
+    margin-right: 10px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100vw;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: var(--cor-accent);
+    outline: none;
+}
+
+.btn-nav {
+    background-color: var(--cor-primaria);
+    color: var(--cor-bg);
+    border-color: var(--cor-primaria);
+    margin-left: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: var(--borda-arredondada-padrao);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-decoration: none;
+}
+
+.btn-nav:hover {
+    background-color: transparent;
+    border-color: var(--cor-accent);
+    transform: translateY(-2px);
+}
+
+/*------------fim do estilo do header------------------------*/
+
+/*----inicio do estilo do sidebar---------*/
+.sidebar {
+    height: 100vh;
+    width: auto;
+    margin: 5px;
+    background-color: var(--cor-primaria);
+    padding: 20px 0;
+    flex-shrink: 0;
+    box-shadow: 10px 8px 6px rgba(26, 32, 44, 0.80);
+    transition: transform 0.8s ease-in-out;
+    transform: translateX(-100%);
+    z-index: 1000;
+    position: fixed;
+    /* Tira do fluxo, permitindo que main-content use 100% */
+}
+
+.sidebar.open {
+    transform: translateX(0);
+    /* Traz a sidebar de volta para a tela */
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 120px;
+    border-radius: 25%;
+    margin-bottom: 10px;
+    border: 2px solid var(--cor-primaria);
+    object-fit: cover;
+}
+
+.user-info .name {
+    font-weight: bold;
+    color: var(--cor-bg);
+}
+
+.user-info .title {
+    font-size: 0.8rem;
+    color: var(--cor-texto);
+}
+
+.divisor {
+    border: 0;
+    height: 3px;
+    background: linear-gradient(to right, #007bff, #28a745);
+    margin: 0 15px;
+    border-radius: 1px;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 20px;
+    font: 0.9rem;
+}
+
+.nav-item {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav-nav ul {
+    display: flex;
+}
+
+.nav-item a {
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    color: var(--cor-bg);
+    transition: background-color 0.5s;
+}
+
+.nav-item a:hover {
+    color: var(--cor-accent);
+}
+
+/* Efeito Sublinhado */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-accent);
+    transition: width 0.3s ease-in-out;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.nav-item i {
+    margin-right: 20px;
+    width: 15px;
+    text-align: center;
+}
+
+/*fim do aside*/
+
+/*container principal*/
+.portal-container {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+    margin-left: 0;
+    /* Começa em 0, ocupando 100% da largura */
+    box-sizing: border-box;
+    /* Garante que padding não estoure a largura total */
+    transition: margin-left 1.9s ease-in-out;
+    position: relative;
+    z-index: 1;
+    /* Abaixo do sidebar */
+    overflow-y: auto;
+}
+
+.main-content.pushed {
+    /* O valor deve ser IGUAL à largura do sidebar (250px) */
+    margin-left: 270px;
+    width: calc(100% - 270px);
+}
+
+/*inicio do dashboard do conteudo visual*/
+
+.dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-fundo-cabecalho-rodape);
+    margin-bottom: 15px;
+}
+
+.card {
+    background-color: var(--cor-fundo-destaque);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 10px 8px 6px rgba(26, 32, 44, 0.80);
+    margin-bottom: 20px;
+}
