@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal-cliente-aluno</title>
-    <link rel="stylesheet" href="portal.css">
+    <link rel="stylesheet" href="/restrict/portal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
@@ -24,7 +24,7 @@
                 </div>
 
             </nav>
-            <a href="#" class="btn-nav encerrar primary" id="openLoginButton">Encerrar</a>
+            <a href="#" class="btn-nav encerrar primary" id="logout-button">Encerrar</a>
         </div>
     </header>
     <!--fim do header navegador-->
@@ -200,6 +200,31 @@
         document.getElementById('menuToggle').addEventListener('click', function (event) {
             event.preventDefault(); // Impede o link de navegar ou rolar para o topo
             toggleMenu(); // Chama a função que faz toda a mágica
+        });
+
+        //logout da pagina
+        document.getElementById('logout-button').addEventListener('click', async (e) => {
+            e.preventDefault();
+
+            try {
+                const response = await fetch('/alunos/logout', {
+                    method: 'POST', // Use POST ou GET, dependendo de como você configurou a rota
+                    // Não é necessário enviar headers de autenticação, pois o cookie será enviado automaticamente
+                });
+
+                // Não precisamos do JSON de resposta, apenas do status 200 (OK)
+                if (response.ok) {
+                    // 1. O servidor limpou o cookie
+
+                    // 2. Redireciona o usuário para a página inicial (pública)
+                    window.location.href = '/';
+                } else {
+                    alert('Erro ao fazer logout. Tente novamente.');
+                }
+            } catch (err) {
+                console.error('Erro de rede ou servidor:', err);
+                alert('Falha na conexão com o servidor.');
+            }
         });
     </script>
 

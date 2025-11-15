@@ -166,15 +166,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 // O login foi bem-sucedido e o perfil foi validado pelo backend
                 const userRole = data.role;
                 alert(`Login efetuado com sucesso! Perfil: ${userRole.toUpperCase()}`);
+                
 
                 let targetPage = 'erro.html';
-
+                
                 // Redireciona com base na role VERIFICADA pelo backend
-                if (userRole === 'aluno') targetPage = '/portalAluno.html';
+                if (userRole === 'aluno') targetPage = '/portal';
                 else if (userRole === 'empresa') targetPage = '/pages/categorias/empresa.html';
                 else if (userRole === 'gerente') targetPage = '/pages/categorias/gerente.html';
-
+                console.log('esta redirecionando para',targetPage);
                 window.location.href = targetPage;
+                
 
             } catch (err) {
 
